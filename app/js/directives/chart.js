@@ -20,7 +20,7 @@ require(['application'],function(application) {
                         $scope.activeValue = 'minutes';
                         $scope.activeCaption = 'Minutes';
                         $scope.chart.setTitle($scope.setTitle('minutes'));
-                        $scope.currentInterval = 1000 * 60;
+                        $scope.currentInterval = 1000 * 2;
                         mapperData.createSeries($scope.chart);
                         mapperData.setupInterval($scope.currentInterval, $scope.chart);
                     };

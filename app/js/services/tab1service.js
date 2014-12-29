@@ -28,8 +28,8 @@ require(['application'],function(application){
             angular.copy(result, list);
         };
 
-
-        this.interval = $interval(factory.data, 2000);
+        factory.data();
+        this.interval = $interval(factory.data, 10000);
 
         return factory;
     });

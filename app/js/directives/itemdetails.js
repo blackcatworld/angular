@@ -34,14 +34,14 @@ require(['application'],function(application){
             });
         };
 
-        var linker = function($scope, element, attrs) {
+        var linker = function(scope, element, attrs) {
 
-            $scope.$watch('content.time', function watchContentType(newValue, oldValue) {
-                doLoad($scope, element);
+            scope.$watch('content.id', function watchContentType(newValue, oldValue) {
+                if (scope.content.id > 0) doLoad(scope, element);
             });
 
-            if ($scope.content.id && $scope.content.type) {
-                doLoad($scope, element);
+            if (scope.content.id && scope.content.type) {
+                doLoad(scope, element);
             } else {
                 element.html('<div>Item not selected.</div>');
             }

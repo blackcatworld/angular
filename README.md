@@ -3,5 +3,6 @@ angular
 
 Anguar JS example
 
-<img src="http://prntscr.com/5m53uh"/>
+![alt tag](http://i.imgur.com/FYBvji1.png)
+
 

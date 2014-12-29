@@ -14,19 +14,19 @@ require(['application'],function(application) {
 
                     $scope.activeValue = 'minutes';
                     $scope.activeCaption = 'Minutes';
-                    $scope.currentInterval = 1000 * 60;
+                    $scope.currentInterval = 1000 * 10;
 
                     $scope.setMinutes = function() {
                         $scope.activeValue = 'minutes';
                         $scope.activeCaption = 'Minutes';
                         $scope.chart.setTitle($scope.setTitle('minutes'));
-                        $scope.currentInterval = 1000 * 2;
-                        mapperData.createSeries($scope.chart);
-                        mapperData.setupInterval($scope.currentInterval, $scope.chart);
+                        $scope.currentInterval = 1000 * 10;
+                        chartData.createSeries($scope.chart);
+                        chartData.setupInterval($scope.currentInterval, $scope.chart);
                     };
 
                     $scope.stopUpdate = function() {
-                        mapperData.cancelInterval($scope.chart);
+                        chartData.cancelInterval($scope.chart);
                     };
 
                     $scope.setTitle = function(interval) {
@@ -101,12 +101,6 @@ require(['application'],function(application) {
                     );
 
                     $scope.chart = chart;
-
-                    /*$scope.$watch("items", function (newValue) {
-                     if ($scope.chart.series && $scope.chart.series.length > 0) {
-                     $scope.chart.series[0].setData(newValue, true);
-                     }
-                     }, true);*/
 
                 }
             }

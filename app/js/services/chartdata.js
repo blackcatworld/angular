@@ -38,12 +38,13 @@ require(['application'], function(application) {
 
             chart.intervalUpdate =
                 $interval(function() {
+                        var timeadd = (new Date()).getTime();
                         var resultadd = {
-                            series1 : [[time  + (240 + 60 * time) * 1000, 100 * increment] ],
-                            series2 : [[time  + (240 + 60 * time) * 1000, 200 * increment] ],
-                            series3 : [[time  + (240 + 60 * time) * 1000, 100 * increment] ],
-                            series4 : [[time  + (240 + 60 * time) * 1000, 300 * increment] ],
-                            series5 : [[time  + (240 + 60 * time) * 1000, 100 * increment] ]
+                            series1 : [[timeadd, 100 * increment], [0, 0] ],
+                            series2 : [[timeadd, 200 * increment], [0, 0] ],
+                            series3 : [[timeadd, 100 * increment], [0, 0] ],
+                            series4 : [[timeadd, 300 * increment], [0, 0] ],
+                            series5 : [[timeadd, 100 * increment], [0, 0] ]
                         };
 
                         if (increment < 10 && this.up) increment++;
@@ -68,7 +69,7 @@ require(['application'], function(application) {
             Object.keys(json).forEach(function(key) {
                 if (chart.seriesIndexes[key] != null) {
                     var series_current = chart.series[chart.seriesIndexes[key]];
-                    var x = json[key][0][0] * 1000; // time
+                    var x = json[key][0][0]; // time
                     var y = json[key][0][1];
                     series_current.addPoint([x, y], true, true);
                 } else {
@@ -99,7 +100,7 @@ require(['application'], function(application) {
                 var data = [];
                 for (var i = 0; i < len; i++) {
                     data.push({
-                        x: json[key][i][0] * 1000,
+                        x: json[key][i][0],
                         y: json[key][i][1]
                     });
                 }

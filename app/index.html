@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Angular JS</title>
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+  <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css"/>
+  <link rel="stylesheet" type="text/css" href="css/application.css"/>
+</head>
+<body ng-app="application" ng-controller="applicationController">
+
+  <div id="page">
+      <nav class="navbar navbar-default app-header" role="navigation">
+          <div class="container-fluid br-nav-container">
+              <!-- Brand and toggle get grouped for better mobile display -->
+              <div class="navbar-header">
+                  {{caption}}
+              </div>
+
+              <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              </div>
+          </div>
+      </nav>
+
+      <div ng-controller="tabsController">
+      <tabset>
+          <tab heading="Tab #1" select="tabSelected('Tab #1')">
+              <div ng-controller="tab1Controller" class="underbar main-container" ng-include="getPage()"></div>
+          </tab>
+          <tab heading="Tab #2" select="tabSelected('Tab #2')">
+              <div ng-controller="tab2Controller" class="underbar main-container" ng-include="getPage()"></div>
+          </tab>
+      </tabset>
+      </div>
+
+  </div>
+
+  <script src="http://localhost:35729/livereload.js"></script>
+  <script type="text/javascript" data-main="js/main" src="lib/require.js"></script>
+</body>
+</html>

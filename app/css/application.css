@@ -1,0 +1,18 @@
+html, body, .fullheight, #page {
+    height: 100%;
+}
+
+.wait-spinner {
+    background: url(../img/spinner_98x98.gif) no-repeat center center;
+    height: 100%;
+    width:100%;
+}
+
+.table-hover>tbody>tr.rowselected {
+    background-color: lightgrey;
+    color: #000000;
+}
+
+.app-header {
+
+}
